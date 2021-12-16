@@ -13,7 +13,7 @@ class Disciplina(models.Model):
     
     nombre = models.CharField(max_length=40)
     sede = models.CharField(max_length=40)
-    dias_realizacion = models.CharField(max_length=40)
+    dias_realizacion = models.DateField()
 
     def __str__(self):
         return "{} - {}".format(self.nombre, self.sede)
