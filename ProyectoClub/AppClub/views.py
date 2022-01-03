@@ -3,6 +3,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import EstadioForm, DisciplinaForm, JugadorForm
 from .models import Estadio, Jugador, Disciplina
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 def inicio(request):
     
@@ -53,4 +57,29 @@ def estadio(request):
 
     return render(request, 'AppClub/estadio.html')
 
+class EstadioList(ListView):
 
+    model = Estadio
+    template_name = "AppClub/estadios_list.html"
+
+class EstadioDetalle(DetailView):
+
+    model = Estadio
+    template_name = "AppClub/estadio_detalle.html"
+
+class EstadioCreacion(CreateView):
+
+    model = Estadio
+    success_url = "/AppClub/estadio/list"
+    fields = ['nombre', 'direccion', 'anioFound']
+
+class EstadioUpdate(UpdateView):
+
+    model = Estadio
+    success_url = "/AppClub/estadio/list"
+    fields = ['nombre', 'direccion', 'anioFund']
+
+class EstadioDelete(DeleteView):
+
+    model = Estadio
+    success_url = "/AppClub/estadio/list"

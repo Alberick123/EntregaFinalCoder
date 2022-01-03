@@ -1,0 +1,22 @@
+{% extends "AppClub/base.html" %}
+
+
+{% load static %}
+
+        {% block contenidoVariable %}
+
+            <h1 class="mb-1">Confirma el delete</h1>
+            
+            <form method="post"> {% csrf_token %}
+
+                Estas seguro de borrar este estadio? --->  "{{ object }}"
+
+                <input type="submit" value="submit" />
+
+
+
+            </form>
+
+         
+
+        {% endblock %}
