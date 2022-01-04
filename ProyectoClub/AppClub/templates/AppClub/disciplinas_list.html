@@ -1,0 +1,33 @@
+{% extends "AppClub/base.html" %}
+
+
+{% load static %}
+
+
+        {% block contenidoVariable %}
+
+        <h1 class="mb-1">Disciplinas del club:</h1> <br>
+          <ul>
+            {% for disciplina in object_list %}
+            
+            <li>
+
+              <p>NOMBRE: {{ disciplina.nombre}}</p>
+
+              <p>
+              <a href="{% url 'Detail3' disciplina.id %}">Ver más</a>
+              <a href="{% url 'Edit3' disciplina.id %}">Editar</a>
+              <a href="{% url 'Delete3' disciplina.id %}">Borrar</a>
+
+            </p>
+
+            </li>
+
+            {% endfor %}
+
+
+
+          </ul>
+         
+
+        {% endblock %}

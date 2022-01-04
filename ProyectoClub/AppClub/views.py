@@ -90,6 +90,59 @@ class EstadioDelete(LoginRequiredMixin, DeleteView):
     model = Estadio
     success_url = "/AppClub/estadio/list"
 
+class JugadorList(LoginRequiredMixin, ListView):
+
+    model = Jugador
+    template_name = "AppClub/plantel_list.html"
+
+class JugadorDetalle(LoginRequiredMixin, DetailView):
+
+    model = Jugador
+    template_name = "AppClub/plantel_detalle.html"
+
+class JugadorCreacion(LoginRequiredMixin, CreateView):
+
+    model = Jugador
+    success_url = "/AppClub/plantel/list"
+    fields = ['nombre', 'altura', 'edad']
+
+class JugadorUpdate(LoginRequiredMixin, UpdateView):
+
+    model = Jugador
+    success_url = "/AppClub/plantel/list"
+    fields = ['nombre', 'altura', 'edad']
+
+class JugadorDelete(LoginRequiredMixin, DeleteView):
+
+    model = Jugador
+    success_url = "/AppClub/plantel/list"
+
+class DisciplinaList(LoginRequiredMixin, ListView):
+
+    model = Disciplina
+    template_name = "AppClub/disciplinas_list.html"
+
+class DisciplinaDetalle(LoginRequiredMixin, DetailView):
+
+    model = Disciplina
+    template_name = "AppClub/disciplinas_detalle.html"
+
+class DisciplinaCreacion(LoginRequiredMixin, CreateView):
+
+    model = Disciplina
+    success_url = "/AppClub/disciplinas/list"
+    fields = ['nombre', 'sede', 'dias_realizacion']
+
+class DisciplinaUpdate(LoginRequiredMixin, UpdateView):
+
+    model = Disciplina
+    success_url = "/AppClub/disciplinas/list"
+    fields = ['nombre', 'sede', 'dias_realizacion']
+
+class DisciplinaDelete(LoginRequiredMixin, DeleteView):
+
+    model = Disciplina
+    success_url = "/AppClub/disciplinas/list"
 
 def login_request(request):
     

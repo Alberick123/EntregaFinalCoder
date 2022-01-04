@@ -1,0 +1,20 @@
+{% extends "AppClub/base.html" %}
+
+
+{% load static %}
+
+        {% block contenidoVariable %}
+
+        <h1 class="mb-1">Detalle de la  disciplina</h1>
+          <p>Nombre de la disciplina: <i> {{ disciplina.nombre}}</i></p>
+          <p>Sede: <i> {{ disciplina.sede}}</i></p>
+          <p>Dia del comienzo de la temporada: <i> {{ disciplina.dias_realizacion}}</i></p>
+
+          <p>
+
+            <a href="{% url 'List3' %}">Volver</a>
+
+          </p>
+         
+
+        {% endblock %}

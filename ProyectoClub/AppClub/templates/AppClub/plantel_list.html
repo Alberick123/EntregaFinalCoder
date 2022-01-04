@@ -1,0 +1,33 @@
+{% extends "AppClub/base.html" %}
+
+
+{% load static %}
+
+
+        {% block contenidoVariable %}
+
+        <h1 class="mb-1">Plantel del club:</h1> <br>
+          <ul>
+            {% for jugador in object_list %}
+            
+            <li>
+
+              <p>NOMBRE: {{ jugador.nombre}}</p>
+
+              <p>
+              <a href="{% url 'Detail2' jugador.id %}">Ver más</a>
+              <a href="{% url 'Edit2' jugador.id %}">Editar</a>
+              <a href="{% url 'Delete2' jugador.id %}">Borrar</a>
+
+            </p>
+
+            </li>
+
+            {% endfor %}
+
+
+
+          </ul>
+         
+
+        {% endblock %}
