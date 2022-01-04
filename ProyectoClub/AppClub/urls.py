@@ -1,6 +1,8 @@
 from django.urls import path
 from AppClub import views
 
+from django.contrib.auth.views import LogoutView
+
 urlpatterns = [
     
     path('inicio', views.inicio, name="Inicio"),
@@ -13,5 +15,8 @@ urlpatterns = [
     path(r'^editar/(?P<pk>\d+)$', views.EstadioUpdate.as_view(), name='Edit'),
     path(r'^borrar/(?P<pk>\d+)$', views.EstadioDelete.as_view(), name='Delete'),
     
-    
+    #Login - Logout - Register
+    path('login', views.login_request, name = 'Login' ),
+    path('register', views.register, name = 'Register'),
+    path('logout', LogoutView.as_view(template_name='AppClub/logout.html'), name = 'Logout'),
 ]

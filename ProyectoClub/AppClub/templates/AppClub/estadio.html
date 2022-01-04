@@ -11,35 +11,35 @@
         </div>
     </header>
     <!-- Quote/testimonial aside-->
-    <aside class="text-left">
-        <div class="container px-3">
+    <aside class="text-center">
+        <div class="container px-5">
             <div class="row gx-5 justify-content-center">
-                <div class="col-sm-11">
-                    {{ form.as_table }}
+                <div class="col-xl-8">
+                    <div class="col-sm-11">
+                        {{ form.as_table }}
+                        <form action="estadio" method="POST"> {% csrf_token %}
+                            <div class="form-group row">
+                                <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                                <div class="col-sm-10">
+                                    <input id="nombre" name="nombre" />
+                                </div>
+                                <label for="direccion" class="col-sm-2 col-form-label">Direccion</label>
+                                <div class="col-sm-10">
+                                    <input id="direccion" name="direccion" />
+                                </div>
+                                <label for="anioFund" class="col-sm-2 col-form-label">Año fundacion</label>
+                                <div class="col-sm-10">
+                                    <input type="date" id="anioFund" name="anioFund" />
+                                </div>
 
-                    <form action="estadio" method="POST"> {% csrf_token %}
-                        <div class="form-group row">
-                            <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
-                            <div class="col-sm-10">
-                                <input id="nombre" name="nombre" />
-                            </div>
-                            <label for="direccion" class="col-sm-2 col-form-label">Direccion</label>
-                            <div class="col-sm-10">
-                                <input id="direccion" name="direccion" />
-                            </div>
-                            <label for="anioFund" class="col-sm-2 col-form-label">Año fundacion</label>
-                            <div class="col-sm-10">
-                                <input type="date" id="anioFund" name="anioFund" />
+                                <div class="col-sm-2 col-form-label"></div>
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                </div>
                             </div>
 
-                            <div class="col-sm-2 col-form-label"></div>
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
+                        </form>
+                    </div>
             </div>
         </div>
     </aside>
