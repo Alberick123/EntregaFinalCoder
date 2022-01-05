@@ -12,6 +12,9 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from django.views.defaults import page_not_found
+
+
 
 def inicio(request):
     
@@ -20,6 +23,18 @@ def inicio(request):
 def contacto(request):
     
     return render(request, 'AppClub/contacto.html')
+
+def terminos(request):
+    
+    return render(request, 'AppClub/terminos.html')
+
+def privacidad(request):
+    
+    return render(request, 'AppClub/privacidad.html')
+
+def acercade(request):
+    
+    return render(request, 'AppClub/acercade.html')
 
 
 def plantel(request):
