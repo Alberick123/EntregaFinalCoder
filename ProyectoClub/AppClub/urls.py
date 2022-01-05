@@ -8,6 +8,7 @@ urlpatterns = [
     path('inicio', views.inicio, name="Inicio"),
     path('plantel', views.plantel, name="Plantel"),
     path('disciplinas', views.disciplinas, name="Disciplinas"),
+    path('contacto', views.contacto, name="Contacto"),
     path('estadio', views.estadio, name="Estadio"),
     path('estadio/list', views.EstadioList.as_view(), name='List'),
     path(r'^(?P<pk>\d+)$', views.EstadioDetalle.as_view(), name='Detail'),

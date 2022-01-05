@@ -1,20 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    
-    <form action="" method="POST">
+{% extends "AppClub/base.html" %}
 
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="LOGIN">
 
-    </form>
+{% load static %}
+
+        {% block contenidoVariable %}
+        <aside class="text-center">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="col-sm-11" >
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <table style="margin: 0 auto;">
+                                    {{ form.as_table }}
+                                </table>
+                                <button type="submit">Iniciar sesión</button>
+                            </form>
+
+                            <div>
+                                <br>
+                                <br>
+                                <br>
+                                <h3>Si aún no se encuentra registrado haga click en el siguiente botón :</h3>
+                                <button class="nav-item"><a class="nav-link me-lg-3" href="{% url 'Register' %}">  Registrarse</a>
+                                    
+                                </button>
     
-</body>
-</html>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        {% endblock %}
+

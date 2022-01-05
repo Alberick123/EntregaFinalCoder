@@ -17,6 +17,10 @@ def inicio(request):
     
     return render(request, 'AppClub/inicio.html')
 
+def contacto(request):
+    
+    return render(request, 'AppClub/contacto.html')
+
 
 def plantel(request):
     if request.method == "POST":
