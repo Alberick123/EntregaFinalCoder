@@ -32,8 +32,8 @@ class UserRegisterForm(UserCreationForm):
     password2 = forms.CharField(label='Repetir la contraseña', widget=forms.PasswordInput) 
 
     #Extra
-    last_name = forms.CharField()
-    first_name = forms.CharField()
+    last_name = forms.CharField(label='Apellido')
+    first_name = forms.CharField(label='Nombre',localize=0)
 
     #imagen_avatar = forms.ImageField(required=False)
 
