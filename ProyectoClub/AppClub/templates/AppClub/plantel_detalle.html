@@ -3,9 +3,12 @@
 
 {% load static %}
 
-        {% block contenidoVariable %}
-
-        <h1 class="mb-1">Detalle del jugador</h1>
+{% block contenidoVariable %}
+<aside class="text-right">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-right">
+            <div class="col-xl-11">
+              <h1 class="mb-1">Detalle del jugador</h1>
           <p>Nombre del jugador: <i> {{ jugador.nombre}}</i></p>
           <p>Altura del jugador: <i> {{ jugador.altura}}</i></p>
           <p>Edad del jugador: <i> {{ jugador.edad}}</i></p>
@@ -15,6 +18,9 @@
             <a href="{% url 'List2' %}">Volver</a>
 
           </p>
-         
+            </div>
+        </div>
+    </div>
+</aside>
 
-        {% endblock %}
+{% endblock %}

@@ -5,29 +5,35 @@
 
 
         {% block contenidoVariable %}
+        <aside class="text-right">
+          <div class="container px-5">
+              <div class="row gx-5 justify-content-right">
+                  <div class="col-xl-11">
+                    <h1 class="mb-1">Disciplinas del club:</h1> <br>
+                      <ul>
+                        {% for disciplina in object_list %}
+                        
+                        <li>
 
-        <h1 class="mb-1">Disciplinas del club:</h1> <br>
-          <ul>
-            {% for disciplina in object_list %}
-            
-            <li>
+                          <p>NOMBRE: {{ disciplina.nombre}}</p>
 
-              <p>NOMBRE: {{ disciplina.nombre}}</p>
+                          <p>
+                          <a href="{% url 'Detail3' disciplina.id %}">Ver más</a>
+                          <a href="{% url 'Edit3' disciplina.id %}">Editar</a>
+                          <a href="{% url 'Delete3' disciplina.id %}">Borrar</a>
 
-              <p>
-              <a href="{% url 'Detail3' disciplina.id %}">Ver más</a>
-              <a href="{% url 'Edit3' disciplina.id %}">Editar</a>
-              <a href="{% url 'Delete3' disciplina.id %}">Borrar</a>
+                        </p>
 
-            </p>
+                        </li>
 
-            </li>
-
-            {% endfor %}
+                        {% endfor %}
 
 
 
-          </ul>
-         
+                      </ul>
+                </div>
+              </div>
+          </div>
+        </aside>
 
         {% endblock %}

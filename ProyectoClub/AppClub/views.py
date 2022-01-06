@@ -32,9 +32,9 @@ def privacidad(request):
     
     return render(request, 'AppClub/privacidad.html')
 
-def acercade(request):
+def about(request):
     
-    return render(request, 'AppClub/acercade.html')
+    return render(request, 'AppClub/about.html')
 
 
 def plantel(request):

@@ -3,18 +3,25 @@
 
 {% load static %}
 
-        {% block contenidoVariable %}
+{% block contenidoVariable %}
+<aside class="text-right">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-right">
+            <div class="col-xl-11">
+              <h1 class="mb-1">Detalle de la  disciplina</h1>
+              <p>Nombre de la disciplina: <i> {{ disciplina.nombre}}</i></p>
+              <p>Sede: <i> {{ disciplina.sede}}</i></p>
+              <p>Dia del comienzo de la temporada: <i> {{ disciplina.dias_realizacion}}</i></p>
+    
+              <p>
+    
+                <a href="{% url 'List3' %}">Volver</a>
+    
+              </p>
+            </div>
+        </div>
+    </div>
+</aside>
 
-        <h1 class="mb-1">Detalle de la  disciplina</h1>
-          <p>Nombre de la disciplina: <i> {{ disciplina.nombre}}</i></p>
-          <p>Sede: <i> {{ disciplina.sede}}</i></p>
-          <p>Dia del comienzo de la temporada: <i> {{ disciplina.dias_realizacion}}</i></p>
+{% endblock %}
 
-          <p>
-
-            <a href="{% url 'List3' %}">Volver</a>
-
-          </p>
-         
-
-        {% endblock %}

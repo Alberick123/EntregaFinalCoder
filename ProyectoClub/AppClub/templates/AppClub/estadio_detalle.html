@@ -3,18 +3,24 @@
 
 {% load static %}
 
-        {% block contenidoVariable %}
+  {% block contenidoVariable %}
+  <aside class="text-right">
+      <div class="container px-5">
+          <div class="row gx-5 justify-content-right">
+              <div class="col-xl-11">
+                <h1 class="mb-1">Detalle del estadio</h1>
+                <p>Nombre del estadio: <i> {{ estadio.nombre}}</i></p>
+                <p>Direccion del estadio: <i> {{ estadio.direccion}}</i></p>
+                <p>Año de fundacion: <i> {{ estadio.anioFund}}</i></p>
+      
+                <p>
+      
+                  <a href="{% url 'List' %}">Volver</a>
+      
+                </p>
+              </div>
+          </div>
+      </div>
+  </aside>
 
-        <h1 class="mb-1">Detalle del estadio</h1>
-          <p>Nombre del estadio: <i> {{ estadio.nombre}}</i></p>
-          <p>Direccion del estadio: <i> {{ estadio.direccion}}</i></p>
-          <p>Año de fundacion: <i> {{ estadio.anioFund}}</i></p>
-
-          <p>
-
-            <a href="{% url 'List' %}">Volver</a>
-
-          </p>
-         
-
-        {% endblock %}
+  {% endblock %}

@@ -3,16 +3,22 @@
 
 {% load static %}
 
-        {% block contenidoVariable %}
+{% block contenidoVariable %}
+<aside class="text-right">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-right">
+            <div class="col-xl-11">
+              <h1 class="mb-1">Formulario de jugador</h1>
+              <form method="POST"> {% csrf_token %}
+    
+              {{form.as_p}}
 
-        <h1 class="mb-1">Formulario de jugador</h1>
-          <form method="POST"> {% csrf_token %}
+              <input type="submit" value="Enviar" />
+    
+              </form>
+            </div>
+        </div>
+    </div>
+</aside>
 
-          {{form.as_p}}
-
-
-          <input type="submit" value="Enviar" />
-
-          </form>
-
-        {% endblock %}
+{% endblock %}
