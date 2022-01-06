@@ -1,0 +1,33 @@
+{% extends "AppClub/base.html" %}
+
+
+{% load static %}
+
+        {% block contenidoVariable %}
+        <aside class="text-right">
+            <div class="container px-5">
+                <div class="row gx-10 justify-content-right">
+                    <div class="col-xl-8">
+                        <div class="col-sm-11">
+
+                            <h1>🤦‍♂️ Esto es un poco vergonzoso...</h1>
+                            <h4>Parece que el sitio al que intentas acceder no está disponible</h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-10 justify-content-right">
+                    <div class="col-xl-8">
+                        <div class="col-sm-11">
+                            </br>
+                            </br>
+                            <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Inicio' %}">  Volver al inicio</a>
+                                    
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        {% endblock %}

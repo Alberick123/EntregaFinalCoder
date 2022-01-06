@@ -19,4 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('AppClub/', include ('AppClub.urls'))
-]
+] 
+
+handler404 = 'AppClub.views.handle_not_found'

@@ -34,9 +34,13 @@
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                         <li class="nav-item"><a class="nav-link me-lg-3" href="{% url 'Disciplinas' %}">Disciplinas</a></li>
                         <li class="nav-item"><a class="nav-link me-lg-3" href="{% url 'Estadio' %}">Estadio</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="{% url 'Plantel' %}">Plantel</a></li>   
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="{% url 'Plantel' %}">Plantel</a></li>  
+                        {% if not request.user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link me-lg-3" href="{% url 'Login' %}"><i><b>Iniciar Sesión</b></i></a></li>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link me-lg-3" href="{% url 'Logout' %}"><i><b>Cerrar Sesión</b></i> </a></li> 
+                        {% endif %}
                     </ul>
                     <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" >
                         <a class="nav-link me-lg-3" href="{% url 'Contacto' %}">

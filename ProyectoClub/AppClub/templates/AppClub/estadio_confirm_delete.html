@@ -11,9 +11,9 @@
                 <h1 class="mb-1">Confirma el delete</h1>       
                     <form method="post"> {% csrf_token %}
 
-                        Estas seguro de borrar este estadio? --->  "{{ object }}"
+                        ¿Estás seguro de borrar este estadio? &#128073 <b>"{{ object }}"</b>
 
-                        <input type="submit" value="borrar" />
+                        <button type="submit" class="btn btn-primary" >Borrar</button>
                     </form>
             </div>
         </div>

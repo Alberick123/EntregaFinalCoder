@@ -13,6 +13,12 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.defaults import page_not_found
+from django.shortcuts import render
+
+
+def handle_not_found(request,exception):
+    
+    return render(request, 'AppClub/not-found.html')
 
 
 
