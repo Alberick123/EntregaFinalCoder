@@ -18,9 +18,9 @@
                           <p>NOMBRE: {{ disciplina.nombre}}</p>
 
                           <p>
-                          <a href="{% url 'Detail3' disciplina.id %}">Ver más</a>
-                          <a href="{% url 'Edit3' disciplina.id %}">Editar</a>
-                          <a href="{% url 'Delete3' disciplina.id %}">Borrar</a>
+                          <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Detail3' disciplina.id %}">  Ver más</a></button>
+                          <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Edit3' disciplina.id %}">  Editar</a></button>
+                          <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Delete3' disciplina.id %}">  Borrar</a></button>
 
                         </p>
 

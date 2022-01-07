@@ -18,11 +18,11 @@
                           <p>NOMBRE: {{ jugador.nombre}}</p>
 
                           <p>
-                          <a href="{% url 'Detail2' jugador.id %}">Ver más</a>
-                          <a href="{% url 'Edit2' jugador.id %}">Editar</a>
-                          <a href="{% url 'Delete2' jugador.id %}">Borrar</a>
+                            <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Detail2' jugador.id %}">  Ver más</a></button>
+                            <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Edit2' jugador.id %}">  Editar</a></button>
+                            <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Delete2' jugador.id %}">  Borrar</a></button>
 
-                        </p>
+                          </p>
 
                         </li>
 

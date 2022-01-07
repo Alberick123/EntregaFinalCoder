@@ -70,7 +70,7 @@ class DisciplinaForm(forms.Form):
 
 class JugadorForm(forms.Form):
     
-    nombre = forms.CharField(max_length=40)
+    nombre = forms.CharField(max_length=40,)
     altura = forms.FloatField()
     edad = forms.IntegerField()
 

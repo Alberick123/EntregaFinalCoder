@@ -18,11 +18,11 @@
                           <p>NOMBRE: {{ estadio.nombre}}</p>
 
                           <p>
-                          <a href="{% url 'Detail' estadio.id %}">Ver más</a>
-                          <a href="{% url 'Edit' estadio.id %}">Editar</a>
-                          <a href="{% url 'Delete' estadio.id %}">Borrar</a>
+                            <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Detail' estadio.id %}">  Ver más</a></button>
+                            <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Edit' estadio.id %}">  Editar</a></button>
+                            <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Delete' estadio.id %}">  Borrar</a></button>
 
-                        </p>
+                          </p>
 
                         </li>
 

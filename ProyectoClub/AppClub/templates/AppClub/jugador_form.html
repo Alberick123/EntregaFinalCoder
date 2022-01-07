@@ -8,12 +8,13 @@
     <div class="container px-5">
         <div class="row gx-5 justify-content-right">
             <div class="col-xl-11">
-              <h1 class="mb-1">Formulario de jugador</h1>
+              <h1 class="mb-1">Editando formulario del jugador...</h1>
+              </br>
               <form method="POST"> {% csrf_token %}
     
               {{form.as_p}}
 
-              <input type="submit" value="Enviar" />
+              <button type="submit" class="btn btn-primary" >Enviar</button>
     
               </form>
             </div>
