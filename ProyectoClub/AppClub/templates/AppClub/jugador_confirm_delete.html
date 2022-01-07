@@ -9,12 +9,13 @@
         <div class="row gx-5 justify-content-right">
             <div class="col-xl-11">
                 <h1 class="mb-1">Confirma el delete</h1>
-            
+                </br>
                 <form method="post"> {% csrf_token %}
-    
-                    ¿Estás seguro de borrar este jugador? &#128073 <b>"{{ object }}"</b>
-    
-                    <button type="submit" class="btn btn-primary" >Borrar</button>
+                    
+                    <h4>¿Estás seguro de borrar esta jugador? &#128073 <b>"{{ object }}" &nbsp; &nbsp; &nbsp;</b>
+
+                        <button type="submit" class="btn btn-primary" >Borrar</button>
+                    </h4>
 
                 </form>
             </div>
