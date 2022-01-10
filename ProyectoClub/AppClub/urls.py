@@ -14,6 +14,7 @@ urlpatterns = [
     path('about', views.about, name="About"),
     path('estadio', views.estadio, name="Estadio"),
     path('estadio/list', views.EstadioList.as_view(), name='List'),
+    path('editar_perfil', views.editar_perfil, name = 'editar_perfil'),
     path(r'^(?P<pk>\d+)$', views.EstadioDetalle.as_view(), name='Detail'),
     path(r'^nuevo$', views.EstadioCreacion.as_view(), name='New'),
     path(r'^editar/(?P<pk>\d+)$', views.EstadioUpdate.as_view(), name='Edit'),
@@ -33,4 +34,5 @@ urlpatterns = [
     path('login', views.login_request, name = 'Login' ),
     path('register', views.register, name = 'Register'),
     path('logout', LogoutView.as_view(template_name='AppClub/logout.html'), name = 'Logout'),
+
 ]

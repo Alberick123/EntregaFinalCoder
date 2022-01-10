@@ -6,22 +6,16 @@ from django.contrib.auth.models import User
 
 
 class UserEditForm(UserCreationForm):
-
-    #Obligatorios
+    first_name = forms.CharField(label="Nombre:")
+    last_name = forms.CharField(label="Apellido:")
     email = forms.EmailField(label="Ingrese su email:")
-    password1 = forms.CharField(label='Contraseña')
+    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repetir la contraseña', widget=forms.PasswordInput) 
 
     class Meta:
         model = User
-        fields = [ 'email', 'password1', 'password2'] 
+        fields = ['last_name', 'first_name', 'email', 'password1', 'password2',] 
     
-    #class Meta:
-    #   model = User
-    #   fields = ['username', 'email', 'password1', 'password2', 'last_name', 'first_name'] 
-        
-        #Saca los mensajes de ayuda
-    #  help_texts = {k:"" for k in fields}
 
 class UserRegisterForm(UserCreationForm):
 
@@ -41,7 +35,7 @@ class UserRegisterForm(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2', 'last_name', 'first_name'] 
+        fields = ['username', 'email', 'password1', 'password2'] 
         
     
     

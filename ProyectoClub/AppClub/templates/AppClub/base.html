@@ -39,8 +39,27 @@
                         <li class="nav-item"><a class="nav-link me-lg-3" href="{% url 'Login' %}"><i><b>Iniciar Sesión</b></i></a></li>
                         {% endif %}
                         {% if request.user.is_authenticated %}
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="{% url 'Logout' %}"><i><b>Cerrar Sesión</b></i> </a></li> 
+
+                        <div class="dropdown">
+                          <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            Login
+                          </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li class="nav-item">
+                                <a class="nav-link me-lg-3" href="{% url 'editar_perfil' %}">
+                                    Mi perfil
+                                </a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link me-lg-3" href="{% url 'Logout' %}">
+                                    <i><b>Cerrar Sesión</b></i>
+                                </a>
+                            </li>  
+                        </ul>
+
+                        </div>
                         {% endif %}
+
                     </ul>
                     <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" >
                         <a class="nav-link me-lg-3" href="{% url 'Contacto' %}">
