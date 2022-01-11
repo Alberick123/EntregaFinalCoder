@@ -1,0 +1,27 @@
+{% extends "AppClub/base.html" %}
+
+
+{% load static %}
+
+        {% block contenidoVariable %}
+        <aside class="text-right">
+            <div class="container px-12">
+                <div class="row gx-5 justify-content-right">
+                    <div class="col-xl-11">
+                    <form action="editar_perfil" method="POST">{% csrf_token %}
+                        <div class="form-group row">
+                        <div class="col-sm-2 align-rigth">
+                            {{ miFormulario.as_table }}
+                            </p>
+                            <button type="submit" class="col-sm-12 btn btn-primary">Enviar</button>
+
+                        </div>
+
+                        </div>
+                    </p>
+
+
+                </div>
+            </div>
+        </aside>
+        {% endblock %}

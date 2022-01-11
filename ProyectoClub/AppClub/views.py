@@ -1,15 +1,19 @@
 from django.shortcuts import render
+from django import forms
 
 from django.http import HttpResponse, request
-from .forms import EstadioForm, DisciplinaForm, JugadorForm, UserRegisterForm
+from .forms import EstadioForm, DisciplinaForm, JugadorForm, UserRegisterForm, UserEditForm
 from .models import Estadio, Jugador, Disciplina
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import User
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.defaults import page_not_found
@@ -20,7 +24,45 @@ def handle_not_found(request,exception):
     
     return render(request, 'AppClub/not-found.html')
 
+def login_request(request):
+    
+    if request.method == "POST":
+        form = AuthenticationForm(request, data = request.POST)
+        
+        if form.is_valid():
+            usuario = form.cleaned_data.get('username')
+            contraseña = form.cleaned_data.get('password')
+            
+            user = authenticate(username=usuario, password=contraseña)
 
+            if user is not None:
+                login(request, user)
+                
+                return render(request,"AppClub/inicio.html", {"mensaje":f"Bienvenido {usuario}"})
+            
+            else:
+                return render(request,"AppClub/inicio.html", {"mensaje":"Error en los datos ingresados"})
+
+        else:
+            return render(request,"AppClub/inicio.html", {"mensaje":"Error formulario erroneo"})
+
+    form = AuthenticationForm()
+
+    return render (request,"AppClub/login.html", {'form':form})
+
+def register(request):
+    
+    if request.method == 'POST':
+        
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            form.save()
+            return render(request, "AppClub/inicio.html", {"mensaje":f"{username} creado"})
+    else:
+        form = UserRegisterForm()
+    
+    return render(request,"AppClub/registro.html", {"form":form})
 
 def inicio(request):
     
@@ -87,7 +129,35 @@ def estadio(request):
 
     return render(request, 'AppClub/estadio.html')
 
-#@login_required
+def editar_perfil(request):
+    usuario = request.user
+
+    if request.method == "POST":
+        editarPerfil = UserEditForm(request.POST)
+
+
+        if editarPerfil.is_valid():
+            datos = editarPerfil.cleaned_data
+            usuario.first_name = datos['first_name']
+            usuario.last_name = datos['last_name']
+            usuario.email = datos['email']
+            usuario.password1 = datos['password1']
+            usuario.password2 = datos['password2']
+            usuario.set_password(datos['password1'])
+            usuario.save()
+            messages.success(request, 'Form submission successful')
+
+            return render(request, 'AppClub/perfil.html', 
+                {"miFormulario":editarPerfil, 'usuario':usuario})
+    else:
+        editarPerfil = UserEditForm(initial={'first_name':usuario.first_name,'last_name':usuario.last_name,
+            'email':usuario.email})
+
+    return render(request, "AppClub/perfil.html", {"miFormulario":editarPerfil, 'usuario':usuario})
+
+
+
+#
 class EstadioList(LoginRequiredMixin, ListView):
 
     model = Estadio
@@ -169,43 +239,3 @@ class DisciplinaDelete(LoginRequiredMixin, DeleteView):
     model = Disciplina
     success_url = "/AppClub/disciplinas/list"
 
-def login_request(request):
-    
-    if request.method == "POST":
-        form = AuthenticationForm(request, data = request.POST)
-        
-        if form.is_valid():
-            usuario = form.cleaned_data.get('username')
-            contraseña = form.cleaned_data.get('password')
-            
-            user = authenticate(username=usuario, password=contraseña)
-
-            if user is not None:
-                login(request, user)
-                
-                return render(request,"AppClub/inicio.html", {"mensaje":f"Bienvenido {usuario}"})
-            
-            else:
-                return render(request,"AppClub/inicio.html", {"mensaje":"Error en los datos ingresados"})
-
-        else:
-            return render(request,"AppClub/inicio.html", {"mensaje":"Error formulario erroneo"})
-
-    form = AuthenticationForm()
-
-    return render (request,"AppClub/login.html", {'form':form})
-
-
-def register(request):
-    
-    if request.method == 'POST':
-        
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            form.save()
-            return render(request, "AppClub/inicio.html", {"mensaje":f"{username} creado"})
-    else:
-        form = UserRegisterForm()
-    
-    return render(request,"AppClub/registro.html", {"form":form})
