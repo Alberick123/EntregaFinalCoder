@@ -11,26 +11,17 @@
                         <div class="col-sm-11" >
                             <form action="" method="POST">
                                 {% csrf_token %}
-                                <table style="margin: 0 auto;">
-                                    {{ form.as_table }}
-                                </table>
-                                </br>
-                                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-                            </form>
-
-                            <div>
-                                <br>
-                                <br>
-                                <br>
-                                <h3>Si aún no se encuentra registrado haz click en el siguiente botón :</h3>
-                                </br>
-
-                                <button class="btn btn-primary"><a style="color:white" class="nav-link me-lg-3" href="{% url 'Register' %}">  Crear nueva cuenta</a>
-                                    
-                                </button>
-    
-                            </div>
-
+                                <form>
+                                  <div class="mb-3">
+                                    <table class="col-sm-8 table">
+                                        {{ form.as_table }}
+                                    </table>
+                                      <div class="mb-3">
+                                        <button type="submit" class="btn btn-primary col-sm-5">Iniciar sesión</button>
+                                        <a class="nav-link" href="{% url 'Register' %}">  No estoy registrado</a>
+                                      </div>
+                                    </div>
+                                </form>
                         </div>
                     </div>
                 </div>
