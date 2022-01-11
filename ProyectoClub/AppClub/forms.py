@@ -30,7 +30,7 @@ class UserRegisterForm(UserCreationForm):
     last_name = forms.CharField(label='Apellido')
     first_name = forms.CharField(label='Nombre',localize=0)
 
-    imagen_avatar = forms.ImageField(required=False)
+    imagen_avatar = forms.ImageField(required=True)
 
 
     
