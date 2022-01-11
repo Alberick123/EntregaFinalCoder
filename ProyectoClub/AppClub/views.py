@@ -9,7 +9,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib import messages
-
+from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
@@ -25,7 +25,6 @@ def handle_not_found(request,exception):
     return render(request, 'AppClub/not-found.html')
 
 def login_request(request):
-    
     if request.method == "POST":
         form = AuthenticationForm(request, data = request.POST)
         
@@ -40,14 +39,9 @@ def login_request(request):
                 
                 return render(request,"AppClub/inicio.html", {"mensaje":f"Bienvenido {usuario}"})
             
-            else:
-                return render(request,"AppClub/inicio.html", {"mensaje":"Error en los datos ingresados"})
-
-        else:
-            return render(request,"AppClub/inicio.html", {"mensaje":"Error formulario erroneo"})
-
-    form = AuthenticationForm()
-
+    else:
+        form = AuthenticationForm(request)
+    
     return render (request,"AppClub/login.html", {'form':form})
 
 def register(request):

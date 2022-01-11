@@ -8,12 +8,16 @@
             <div class="container px-12">
                 <div class="row gx-5 justify-content-right">
                     <div class="col-xl-11">
-                    <form action="editar_perfil" method="POST">{% csrf_token %}
+                    <form action="" method="POST">{% csrf_token %}
                         <div class="form-group row">
-                        <div class="col-sm-2 align-rigth">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-7 align-rigth">
+                            <table class="col-sm-10 1align-rigth">
+                                
                             {{ miFormulario.as_table }}
+                            </table>
                             </p>
-                            <button type="submit" class="col-sm-12 btn btn-primary">Enviar</button>
+                            <button type="submit" class="col-sm-7 btn btn-primary">Enviar</button>
 
                         </div>
 

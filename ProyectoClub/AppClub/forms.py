@@ -11,6 +11,7 @@ class UserEditForm(UserCreationForm):
     email = forms.EmailField(label="Ingrese su email:")
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repetir la contraseña', widget=forms.PasswordInput) 
+    imagen_avatar = forms.ImageField(required=False)
 
     class Meta:
         model = User
@@ -29,7 +30,7 @@ class UserRegisterForm(UserCreationForm):
     last_name = forms.CharField(label='Apellido')
     first_name = forms.CharField(label='Nombre',localize=0)
 
-    #imagen_avatar = forms.ImageField(required=False)
+    imagen_avatar = forms.ImageField(required=False)
 
 
     
