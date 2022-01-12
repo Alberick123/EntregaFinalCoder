@@ -42,7 +42,7 @@ _A grandes rasgos el proyecto fue implementado en segmentos por los miembros del
 
 * _Agustín Aguirre se encargo de la creación de modelos, vistas y sus urls asociadas y el CRUD de los modelos._
 * _Alan Gon se encargo de la creación de los formularios, creación, edición y eliminación de perfiles._
-* _Agusín Gutiérrez se encargo de los templates HTML, Login, Signup y Logout del sitio y la opción de mensajería._
+* _Agustín Gutiérrez se encargo de los templates HTML, Login, Signup y Logout del sitio y la opción de mensajería._
 
 
 ## Pruebas de la web
