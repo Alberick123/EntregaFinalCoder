@@ -33,6 +33,15 @@ _Para lograr esto puedes clonar el repositorio utilizando GIT, para más informa
 
 _Se recomienda el uso de un IDE (como por ejemplo **VSCode**) para la visualización de los elementos del proyecto. Además, se necesitará tener instalados en tu maquina local tanto Python como Django (puedes consultar el siguiente enlace para realizar estas instalaciones: https://tutorial.djangogirls.org/es/installation/#create-a-pythonanywhere-account)_
 
+## Desarrollo del proyecto
+
+_A grandes rasgos el proyecto fue implementado en segmentos por los miembros del grupo de trabajo. Dentro de las actividades realizadas por cada miembro son de destacar:_
+
+* _Agustín Aguirre se encargo de la creación de modelos, vistas y sus urls asociadas y el CRUD de los modelos._
+* _Alan Gon se encargo de la creación de los formularios, creación, edición y eliminación de perfiles._
+* _Agusín Gutiérrez se encargo de los templates HTML, Login, Signup y Logout del sitio y la opción de mensajería._
+
+
 ## Pruebas de la web
 
 _Una vez completados los pasos anteriores nos encontramos en condiciones de ejecutar en la consola de nuestro IDE (estando ubicados sobre el directorio de nuestro proyecto) el comando:_
