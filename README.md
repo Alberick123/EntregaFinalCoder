@@ -5,6 +5,9 @@ _**Objetivos generales:** En equipos (3 o 4 estudiantes, asignados por el tutor)
 
 _Un video de menos de 10 minutos mostrando el correcto funcionamiento de la web._
 
+### _**Video del funcionamiento del sitio:**_ 
+_Se puede ver el sitio funcionando en el siguiente video: https://youtu.be/mt1lsFNyA6Y.
+
 _Se deberá entregar el link del repositorio de github con la última versión del proyecto. TODOS los integrantes del grupo deben tener algún commit en el proyecto._
 
 _TODOS deberán entregar por la plataforma, ya que la performance en el github y la participación en el video pueden generar diferencias entre las notas de los integrantes._
